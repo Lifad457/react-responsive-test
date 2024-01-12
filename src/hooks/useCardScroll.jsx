@@ -38,7 +38,7 @@ export default function useCardScroll() {
             <React.Fragment key={index}>
                 <Card 
                     $photo={photo} 
-                    $index={startIndex - (index * 5)} 
+                    $index={startIndex - (index * 3) - 7} 
                     $faded={photoIndex <= index + 1 ? true : false} 
                 />
             </React.Fragment>
