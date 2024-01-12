@@ -173,6 +173,7 @@ const myFadeOut = keyframes`
 const myFadeIn = keyframes`
     from {
         transform: rotate(-20deg) translateX(-500px);
+        opacity: 0;
     }
     to {
         transform: rotate(${props => props.$index}deg);

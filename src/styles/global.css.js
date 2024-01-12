@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
         --fw-bold: 700;
         --fw-black: 900;
         --clr-primary: whitesmoke;
+        --clr-secondary:  #8c8ddb;
     }
 
     html, body {
@@ -23,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: #6c85d4;
+        background-color: var(--clr-secondary);
         background-image: url(${props => props.$photo});
         background-position: center;
         background-repeat: no-repeat;
