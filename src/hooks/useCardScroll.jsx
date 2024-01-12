@@ -14,25 +14,22 @@ export default function useCardScroll() {
     useEventListener('wheel', handleScroll);
 
     function handleScroll(e) {
-        if (photoIndex >= 1 && photoIndex < nbPhotos) {
-            if (e.deltaY > 0) {
-                setPhotoIndex(photoIndex + 1);
-                setText(description(photoIndex + 1));
-            } else if (photoIndex !== 1) {
-                setPhotoIndex(photoIndex - 1);
-                setText(description(photoIndex - 1));
-            } else {
+        if (e.deltaY > 0) {
+            if (photoIndex === nbPhotos) {
+                setPhotoIndex(1);
+                setText(description(1));
+                return;
+            }
+            setPhotoIndex(photoIndex + 1);
+            setText(description(photoIndex + 1));
+        } else {
+            if (photoIndex === 1) {
                 setPhotoIndex(nbPhotos);
                 setText(description(nbPhotos));
+                return;
             }
-        }
-        else if (photoIndex === nbPhotos && e.deltaY < 0) {
             setPhotoIndex(photoIndex - 1);
             setText(description(photoIndex - 1));
-        }
-        else if (photoIndex === nbPhotos && e.deltaY > 0) {
-            setPhotoIndex(1);
-            setText(description(1));
         }
     }
     
