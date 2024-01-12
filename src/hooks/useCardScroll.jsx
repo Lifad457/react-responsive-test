@@ -9,7 +9,7 @@ export default function useCardScroll() {
     const [photoIndex, setPhotoIndex] = useState(1);
     const [text, setText] = useState(description(photoIndex));
     const nbPhotos = photoArray.length;
-    const startIndex = 15;
+    const startIndex = 9;
 
     useEventListener('wheel', handleScroll);
 
@@ -38,7 +38,7 @@ export default function useCardScroll() {
             <React.Fragment key={index}>
                 <Card 
                     $photo={photo} 
-                    $index={startIndex - (index * 3) - 7} 
+                    $index={startIndex - (index * 3)} 
                     $faded={photoIndex <= index + 1 ? true : false} 
                 />
             </React.Fragment>
